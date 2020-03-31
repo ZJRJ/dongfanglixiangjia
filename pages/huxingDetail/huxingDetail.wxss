@@ -1,0 +1,87 @@
+/* pages/huxingDetail/huxingDetail.wxss */
+
+/* 通用 */
+page{
+  color: rgb(117, 115, 115);
+}
+.bra6 {
+  border-radius: 6rpx;
+}
+
+.mb20 {
+  margin-bottom: 20rpx;
+}
+
+.elli {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.black {
+  color: black;
+}
+.content{
+  margin: 0 30rpx;
+}
+/* 轮播代码 */
+
+.imgSwiper {
+  width: 100%;
+  height: 380rpx;
+}
+
+.imgSwiper  image {
+  width: 100%;
+  height: 100%;
+}
+
+.imgSwiper .demo-text-1 {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #1aad19;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.imgSwiper .demo-text-2 {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #2782d7;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.imgSwiper .demo-text-3 {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(243, 230, 55);
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.huxing {
+  font-size: 45rpx;
+}
+
+.state {
+  font-size: 20rpx;
+  width: 60rpx;
+  text-align: center;
+  padding: 4rpx 8rpx;
+  color: white;
+  background-color: #b60005;
+}
+.price{
+  color:orangered;
+
+}
+.title{
+  font-size: 45rpx;
+}
+.total{
+  color: orange;
+}

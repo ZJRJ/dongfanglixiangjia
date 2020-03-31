@@ -1,0 +1,76 @@
+/* pages/moreInfo/moreInfo.wxss */
+
+page {
+  background-color: #f6f7f8;
+}
+
+/* 通用 */
+
+.bra6 {
+  border-radius: 6rpx;
+}
+
+.mb20 {
+  margin-bottom: 50rpx;
+}
+
+.elli {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pinkRed {
+  color: #d9172a;
+}
+
+.test {
+  padding: 0 20rpx;
+}
+
+.name {
+  padding: 40rpx 0 10rpx;
+  font-weight: 700;
+  font-size: 36rpx;
+}
+.price{
+  margin-bottom: 50rpx;
+
+}
+.weui-cell {
+  justify-content: center;
+  align-items: baseline;
+  font-size: 28rpx;
+}
+
+.weui-cell__ft {
+  text-align: left;
+  flex: 0 0 80%;
+  color: rgb(54, 53, 53);
+}
+
+.weui-cell__bd {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.weui-cell::before {
+  right: 16px;
+}
+
+.table {
+  padding: 20rpx 0;
+}
+
+.th > view {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.th > view, .td > view {
+  flex: 1;
+  text-align: center;
+}
+
+.td, .th {
+  padding: 16rpx 16px;
+  color: rgb(83, 71, 71);
+}

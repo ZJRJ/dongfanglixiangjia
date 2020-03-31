@@ -1,0 +1,43 @@
+<!--pages/huxingDetail/huxingDetail.wxml-->
+<view class="huxingDetail">
+  <!-- 
+indicator-dots='true':是否显示面板指示点,默认为false
+indicator-color='red':指示点颜色
+indicator-active-color='yellow':当前选中的指示点颜色
+autoplay='true':是否自动切换
+ -->
+  <swiper indicator-dots='true' indicator-color='orange' indicator-active-color='yellow' autoplay='true' class="imgSwiper mb20">
+    <swiper-item class='demo-text-1 bra6'>
+      <image src="{{detail.layoutPic}}"></image>
+    </swiper-item>
+   
+  </swiper>
+  <view class="content">
+    <view>
+      <text class="huxing black">{{detail.name}}  </text>
+      <text class="houseType">{{detail.layoutName}}</text>
+    </view>
+    <view class="mb20">
+      <text class="state bra6">在售</text>
+    </view>
+    <view class="mb20">
+      <text class="total">约{{detail.layoutPrice}}万元/套</text>
+    </view>
+    <view class="mb20">
+      建筑面积（约）:
+      <text class="black">{{detail.layoutArea}}m²</text>
+    </view>
+    <view class="mb20">
+      户型分布：
+      <text class="black">{{detail.layoutFenbu}}</text>
+    </view>
+    <view class="mb20">
+      项目名称：
+      <text class="black">{{louPanName}}</text>
+    </view>
+    <view class="black title">户型介绍</view>
+    <view>
+      {{detail.layoutDes}}
+    </view>
+  </view>
+</view>

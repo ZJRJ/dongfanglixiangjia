@@ -1,0 +1,108 @@
+<!--pages/shouye/shouye.wxml-->
+<view class="shouye">
+
+  <view class='search mb30'>
+    <view class="searchCity">漯河</view>
+    <input class="searchTitle" type='text' placeholder='输入你想要的内容'  confirm-type='search' value="{{inputValue}}" bindinput='inputBind' bindconfirm='query'></input>
+    <i class="iconfont iconsousuo"  bindtap='query' ></i>
+    
+    
+
+  </view>
+  <!-- 
+indicator-dots='true':是否显示面板指示点,默认为false
+indicator-color='red':指示点颜色
+indicator-active-color='yellow':当前选中的指示点颜色
+autoplay='true':是否自动切换
+ -->
+  <swiper indicator-dots='true' indicator-color='orange' indicator-active-color='yellow' autoplay='true' class="imgSwiper mb30">
+    <swiper-item class='demo-text-1 bra6' wx:for='{{navList}}' wx:key="index">
+      <image src='{{item.picUrl}}'></image>
+    </swiper-item>
+    <!-- <swiper-item class='demo-text-1 bra6'>
+      <image src='https://img.zhichiwangluo.com/zcimgdir/thumb/t_15743046645dd5fb98f27e3.jpg'></image>
+    </swiper-item>
+    <swiper-item class='demo-text-2 bra6'>
+      <image src='https://img.zhichiwangluo.com/zcimgdir/thumb/t_15755960915de9b03b3f509.jpg'></image>
+    </swiper-item>
+    <swiper-item class='demo-text-3 bra6'>
+      <image src='https://img.zhichiwangluo.com/zcimgdir/thumb/t_15743046645dd5fb98f27e3.jpg'></image>
+    </swiper-item> -->
+  </swiper>
+
+  <!-- <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button> -->
+  <!-- 热键 -->
+  <view class="free-vessel bra6 mb30">
+    <view class="" wx:for='{{imgList}}' wx:key="index">
+      <view>
+        <image src="{{item.imgSrc}}"></image>
+        <!-- <i class="iconfont {{item.icon}}"></i> -->
+      </view>
+      <view>
+        <text>{{item.msg}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 项目展示图片 -->
+  <view class="videoEnter bra6 mb30">
+    <image src='http://chat.hnshengen.com/images/videoEnter.png'></image>
+  </view>
+  <!-- 公告 -->
+  <view class="notice bra6 mb30">
+    <i class="iconfont icontongzhi"></i>
+    <swiper class='swiper-container' autoplay='true' vertical='true' circular='true' interval='2000'>
+      <block wx:for='{{msgList}}' wx:key="index">
+        <navigator open-type='navigate'>
+          <swiper-item>
+            <view class='swiper-item'>{{item.title}}</view>
+          </swiper-item>
+        </navigator>
+      </block>
+    </swiper>
+  </view>
+  <!-- 房源模块 -->
+  <view class="houseInfo">
+    <view class="title">
+      <text>好房推荐</text>
+    </view>
+    <view class="box bra6 {{index == 0?'tlr':''}}" wx:for="{{houseList}}" wx:key="index" data-index="{{item.louPanId}}" bindtap="detail" wx:if="{{houseList.length>0}}">
+      <view class="boxTop">
+        <view class="img">
+          <text class="saling bra6">{{item.status == '1'?'在售':'待售'}}</text>
+          <image class="bra6" src="{{item.picUrlList[0].picUrl}}"></image>
+        </view>
+        <view class="info">
+          <view class="louPanName ellipsis">
+            <text>{{item.louPanName}}</text>
+          </view>
+          <view class="projectPrice">
+            <text>约{{item.price}}元/m²起</text>
+          </view>
+          <view class="projectInfo">
+            <text>{{item.num}}人想买</text>
+          </view>
+          <view class="projectLocation elli">
+            <text>{{item.address}}</text>
+          </view>
+          <view class="fitmentType">
+            <text wx:for="{{item.lightSpot}}" wx:key="itemName" wx:for-item="itemName">{{itemName}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="boxBottom bgr6">
+        <view class="left elli">
+          <text>靓盘好卖,佣金易拿</text>
+          <i class="iconfont iconhongbao"></i>
+        </view>
+        <view>
+          <text>我要推荐</text>
+          <i class="iconfont iconyoujiantou-tianchong"></i>
+        </view>
+      </view>
+    </view>
+    <view class="noData">
+      <text>{{tips}}</text>
+    </view>
+  </view>
+
+</view>

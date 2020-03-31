@@ -1,0 +1,755 @@
+/* pages/detail/detail.wxss */
+/* @import "/wxParse/wxParse.wxss"; */
+:-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  display: none;
+}
+
+page {
+  width: 100%;
+  height: auto;
+  background-color: #b60005;
+}
+
+.detail {
+  overflow: hidden;
+  padding: 40rpx 30rpx 130rpx;
+}
+
+/* 通用 */
+
+.bra6 {
+  border-radius: 6rpx;
+}
+
+.mb30 {
+  margin-bottom: 30rpx;
+}
+
+.elli {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pinkRed {
+  color: #d9172a;
+}
+
+/* 轮播代码 */
+
+.imgSwiper {
+  width: 100%;
+  height: 380rpx;
+}
+
+.imgSwiper  image {
+  width: 100%;
+  height: 100%;
+}
+
+.imgSwiper .demo-text-1 {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #1aad19;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.imgSwiper .demo-text-2 {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #2782d7;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.imgSwiper .demo-text-3 {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(243, 230, 55);
+  color: #fff;
+  font-size: 36rpx;
+}
+
+/* 房源信息 */
+
+.houseInfo {
+  padding: 30rpx;
+  background-color: #fdeaec;
+}
+
+.houseInfo .grey {
+  color: grey;
+}
+
+.houseInfo>view {
+  margin: 10rpx 0;
+}
+
+.houseInfo .state {
+  margin-bottom: 16rpx;
+  overflow: hidden;
+}
+
+.houseInfo .state a {
+  float: left;
+  font-size: 22rpx;
+  /* background: #f0f3fa; */
+  border: 2rpx solid #d9172a;
+  color: #d9172a;
+  padding: 0 10rpx;
+  margin-right: 10rpx;
+  /* line-height: 40rpx; */
+}
+
+.houseInfo .state a.red {
+  background: #d9172a;
+  color: #fff;
+}
+
+.houseInfo .projectName {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.houseInfo .price {
+  font-size: 36rpx;
+  color: #d9172a;
+  font-weight: bold;
+}
+
+.houseInfo .projectNameRemark {
+  font-size: 28rpx;
+}
+
+.houseInfo .buyPeoples {
+  overflow: hidden;
+}
+
+.houseInfo .buyPeoples>view {
+  display: inline-block;
+}
+
+.houseInfo .buyPeoples .img {
+  width: 60rpx;
+  height: 60rpx;
+  background-size: 100% 100%;
+  border-radius: 50%;
+  border: 1rpx solid white;
+  box-sizing: border-box;
+}
+
+.houseInfo .buyPeoples .special {
+  vertical-align: super;
+}
+
+.houseInfo .buyPeoples .ml15 {
+  margin-left: -15rpx;
+}
+
+.houseInfo  .more01 {
+  font-size: 28rpx;
+  padding: 10rpx 6rpx;
+  text-align: center;
+  background: #f4f9ff;
+  color: #609df0;
+  margin-top: 20rpx;
+}
+
+.houseInfo .tel, .houseInfo .address {
+  font-size: 30rpx;
+  position: relative;
+}
+
+.tel .icondianhua, .address .icondizhi {
+  position: absolute;
+  right: 0;
+  color: #d9172a;
+}
+
+.room {
+  overflow: hidden;
+}
+
+.room  button {
+  width: auto;
+  padding: 0;
+  display: inline;
+}
+
+.room .left {
+  width: 410rpx;
+  height: 200rpx;
+  background-color: white;
+  float: left;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.room .right {
+  width: 200rpx;
+  height: 200rpx;
+  /* background-color: white; */
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.room .right > view {
+  height: 90rpx;
+  /* background: rgb(243, 230, 55); */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.videoEnter {
+  height: 210rpx;
+}
+
+.videoEnter image {
+  width: 100%;
+  height: 100%;
+}
+
+.hx_detailBox {
+  background-color: #f8e6e6;
+}
+
+.hx_detailBox .hx_box {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  /* color: white; */
+}
+
+.hx_detailBox .hx_box .hx_title {
+  font-weight: bold;
+}
+
+.hx_detailBox .hx_box .hx_more {
+  font-size: 24rpx;
+  color: grey;
+}
+
+/* 置业顾问 */
+
+.zygw {
+  background-color: #fceced;
+  padding: 20rpx;
+}
+
+.ztt_hdDetail {
+  font-weight: bold;
+  color: #44484c;
+  /* line-height: 1.08rem; */
+  padding: 10rpx;
+  /* background: #fef8f5; */
+  border-top-left-radius: 6rpx;
+  border-top-right-radius: 6rpx;
+}
+
+.ztt_zygwList {
+  margin: 0rem 20rpx 0;
+}
+
+.ztt_zygwList .ztt_zygwListItem {
+  border-top: 2rpx solid #eadddd;
+  transform-origin: 0px 0px;
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.ztt_zygwListItem {
+  position: relative;
+  padding: 30rpx 164rpx 30rpx 0;
+  min-height: 70rpx;
+}
+
+.ztt_zygwListItem .head {
+  float: left;
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 26rpx;
+  position: relative;
+}
+
+.ztt_zygwListItem .info text {
+  font-size: 28rpx;
+  color: #232426;
+  margin-right: 6rpx;
+}
+
+.ztt_zygwListItem .lab {
+  font-size: 24rpx;
+  color: #7d8084;
+  margin-top: -2rpx;
+}
+
+.ztt_zygwListItem .wxBtn {
+  right: 100rpx;
+}
+
+.ztt_zygwListItem .btns {
+  position: absolute;
+  top: 40rpx;
+  right: 16rpx;
+  font-size: 0;
+}
+
+.ztt_imBtn, .ztt_telBtn {
+  display: inline-block;
+  width: 64rpx;
+  height: 64rpx;
+  background-position: -64rpx -140rpx;
+  background: url(https://housecollection.oss-cn-beijing.aliyuncs.com/xiaochengxu/564e8e5fbd3f5ed2345784d1213ea33.png) no-repeat;
+  background-size: 560rpx auto;
+}
+
+.ztt_zygwListItem .head image {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.ztt_zygwListItem .wxBtn {
+  right: 100rpx;
+}
+
+.ztt_imBtn {
+  background-position: -65rpx -140rpx;
+}
+
+.ztt_telBtn {
+  background-position: 0 -140rpx;
+}
+
+/* 轮播 */
+
+.hx_detailBox .imgSwiper {
+  padding: 16rpx 0 16rpx 32rpx;
+  height: 400rpx;
+  overflow: hidden;
+  width: 626rpx;
+}
+
+.hx_detailBox .imgSwiper .swiperItem {
+  display: inline-block;
+  padding-right: 40rpx;
+  width: 360rpx !important;
+  vertical-align: top;
+}
+
+.hx_detailBox .imgSwiper .swiperItem .pic {
+  height: 260rpx;
+  box-sizing: border-box;
+  border: 1rpx solid rgba(0, 0, 0, 0.05);
+  /* border-radius: 0.08rem; */
+  position: relative;
+  margin-bottom: 10rpx;
+}
+
+.hx_detailBox .imgSwiper .swiperItem .pic image {
+  width: 100%;
+  height: 100%;
+}
+
+.hx_detailBox .imgSwiper .swiperItem  .tit {
+  /* font-weight: bolder; */
+}
+
+.hx_detailBox .imgSwiper .swiperItem .area {
+  font-size: 26rpx;
+  color: grey;
+}
+
+.hx_detailBox .imgSwiper .swiperItem .labs {
+  font-size: 0;
+  margin-top: 6rpx;
+  height: 36rpx;
+  overflow: hidden;
+}
+
+.hx_detailBox .imgSwiper .swiperItem .labs text {
+  font-size: 24rpx;
+  color: #8f9aaf;
+  /* height: 0.68rem; *//* line-height: 0.68rem; */
+  margin: 0 12rpx 0 0;
+  display: inline-block;
+  padding: 0 8rpx;
+  background-color: #f0f3fa;
+}
+
+/* 时间线 */
+
+.timeline .hx_box {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 10rpx;
+}
+
+.timeline .hx_box .hx_title {
+  font-weight: bold;
+}
+
+.timeline .hx_box .hx_more {
+  font-size: 24rpx;
+  color: grey;
+}
+
+.timeline {
+  padding: 20rpx;
+  background-color: #f8e6e6;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item-head {
+  width: 20rpx;
+  height: 20rpx;
+  left: 17rpx;
+  top: 8rpx;
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+}
+
+.timeline-item-color {
+  background-color: #d9172a;
+}
+
+.hide {
+  display: none;
+}
+
+.timeline-item-tail {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 4rpx;
+  left: 25rpx;
+  top: 10rpx;
+  background-color: #d9172a;
+}
+
+.timeline-item-content {
+  padding: 0 0 0 50rpx;
+  font-size: 28rpx;
+}
+
+.timeline-item-content .info {
+  color: #888;
+  background: #eeeff6;
+  margin-right: 20rpx;
+  padding: 20rpx;
+}
+
+.timeline-item-content .time {
+  color: #333;
+  font-size: 32rpx;
+}
+
+/* news */
+
+.news {
+  padding: 20rpx;
+  background-color: #f8e6e6;
+}
+
+.news .hx_box {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 10rpx;
+}
+
+.news .hx_box .hx_title {
+  font-weight: bold;
+}
+
+.news .hx_box .hx_more {
+  font-size: 24rpx;
+  color: grey;
+}
+
+.news .li {
+  border-bottom: 2rpx solid #eadddd;
+  padding: 26rpx 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.news .li .pic {
+  /* float: left; */
+  width: 240rpx;
+  height: 180rpx;
+  margin-right: 22rpx;
+  flex: 1;
+}
+
+.news .li .pic image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.08rem;
+}
+
+.news .li .rightContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+
+.news .li .rightContent  .title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+/* 广告 */
+
+.advertisement {
+  padding: 20rpx;
+  background-color: #f8e6e6;
+}
+
+.advertisement .hx_box {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 10rpx;
+}
+
+.advertisement .hx_box .hx_title {
+  font-weight: bold;
+}
+
+.advertisement .hx_box .hx_more {
+  font-size: 24rpx;
+  color: grey;
+}
+
+.advertisement .ad_img {
+  height: 1200rpx;
+  background-color: #f09292;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* 项目位置 */
+
+.projectAddress {
+  padding: 20rpx 20rpx 40rpx;
+  background-color: #f8e6e6;
+}
+
+.projectAddress .hx_box {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 10rpx;
+}
+
+.projectAddress .hx_box .hx_title {
+  font-weight: bold;
+}
+
+.projectAddress .hx_box .hx_more {
+  font-size: 24rpx;
+  color: grey;
+}
+
+.projectAddress .ad_img {
+  height: 400rpx;
+  background-color: #f09292;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.projectAddress .ad_address {
+  position: relative;
+  width: 290rpx;
+  background-color: rgb(252, 249, 249);
+  padding: 16rpx 20rpx;
+  border-radius: 14rpx;
+  left: 22%;
+  top: 5%;
+}
+
+.projectAddress .ad_address .name {
+  width: 250rpx;
+  text-align: center;
+}
+
+.projectAddress .ad_address .icondizhi, .name .icondizhi {
+  top: 16rpx;
+  right: 20rpx;
+  color: #b60005;
+  position: absolute;
+}
+
+.drift {
+  animation: drift 1s infinite;
+}
+
+@keyframes drift {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(3px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* tab */
+
+.tab {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab .tabItem {
+  text-align: center;
+  padding: 10rpx 0;
+  position: relative;
+  color: rgb(82, 79, 79);
+}
+
+.tab .active {
+  color: black;
+}
+
+.tab .tabItem .iconF {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.tab .tabItem .iconfont {
+  font-size: 50rpx;
+}
+
+.tab .tabItem .name {
+  font-size: 28rpx;
+}
+
+.active::after {
+  content: "";
+  width: 34rpx;
+  height: 2rpx;
+  background: black;
+  display: block;
+  position: absolute;
+  left: 10rpx;
+  bottom: 0rpx;
+}
+
+.iconjiaotong {
+  color: #13d9a1;
+}
+
+.iconxuexiao {
+  color: #2b2ef1;
+}
+
+.iconxuexiao {
+  color: #2b2ef1;
+}
+
+.iconyiliao {
+  color: #ff6190;
+}
+
+.icongouwu {
+  color: #fdb92c;
+}
+
+.iconcanyin {
+  color: #3fbbff;
+}
+
+/* tabContent */
+
+.tabContent {
+  padding: 20rpx 0;
+}
+
+.tabContent .tabContentItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 6rpx 30rpx;
+  font-size: 28rpx;
+  color: rgb(46, 44, 44);
+}
+
+.tabContent .tabContentItem .remote {
+  color: rgb(156, 147, 147);
+}
+
+.tabContent .tabContentItem .name {
+  width: 300rpx;
+}
+
+.around {
+  color: #d9172a;
+  border: 2rpx solid #d9172a;
+  text-align: center;
+  padding: 15rpx 0;
+}
+
+/* fixed */
+
+.fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex .bgRed {
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 15rpx 0;
+  background: #b60005;
+  padding: 0 90rpx;
+  color: white;
+}
+
+.share {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.share>view {
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #b60005;
+}
+
+.share .fenxiang {
+  line-height: 30rpx;
+}

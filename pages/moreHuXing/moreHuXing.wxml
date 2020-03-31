@@ -1,0 +1,38 @@
+<!--pages/moreHuXing/moreHuXing.wxml-->
+<view class="moreHuXing">
+  <wxs src="../../common/filter/filter.wxs" module="filter"></wxs>
+
+  <view class="swiper-tab">
+    <view wx:for='{{tabList}}' style="width:{{tabListWidth}}%" class="swiper-tab-list  {{currentTab==index ? 'on' : ''}}" data-current="{{index}}" bindtap="swichNav" wx:key="index">{{filter.formatRoom(item)}} </view>
+    <!-- <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">三室</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">四室</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">四室</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">四室</view> -->
+  </view>
+
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange">
+    <swiper-item    wx:for="{{contentList}}"  wx:key="index">
+      <view class="card-list" wx:for="{{item.huxing}}"  wx:for-item="twodata" wx:key="id">
+        <view class="card-list-li mb30">
+          <view class="title">{{twodata.layoutName}}</view>
+          <view class="area">建面约{{twodata.layoutArea}}m²</view>
+          <view class="detail">
+            <view class="left">
+              <view class="sale bra6">在售</view>
+              <image src="{{twodata.layoutPic}}" alt=""></image>
+            </view>
+            <view class="right">
+              <view class="price">约{{twodata.layoutPrice}}万</view>
+              <view class="">总价(每套)</view>
+              <view class="apartment">高层{{twodata.name}}户型</view>
+              <view class="special" wx:for="{{twodata.layoutDes}}"  wx:for-item="threedata" wx:key="id">
+                <text class="tips bra6">{{threedata}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+
+</view>

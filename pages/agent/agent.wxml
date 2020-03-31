@@ -1,0 +1,42 @@
+<!--pages/agent/agent.wxml-->
+<view class="agent">
+  <view class="blue"></view>
+ 
+  <view class="detail bra6">
+    <view class="avatarBox">
+      <image src="http://housecollection.oss-cn-beijing.aliyuncs.com/loupan-picture/louPan/1582787661643_715.png"></image>
+    </view>
+    <view class="r">
+      <view class="info name">
+        <text>杨杰</text>
+      </view>
+       <view class="info">
+        <text>置业顾问</text>
+      </view>
+      <view class="info">
+        <text>漯河东方经典</text>
+      </view>
+    </view>
+    <view class="both"></view>
+  </view>
+   <view class="userInfo ">
+      <view class="list-li bra6 mb30">
+        <view class="left">
+          <icon class="iconfont iconshouji"></icon>
+          <view>手机</view>
+        </view>
+        <view class="right">
+          <view>17538132000</view>
+        </view>
+      </view>
+       <view class="list-li bra6">
+        <view class="left">
+          <icon class="iconfont icondizhi1"></icon>
+          <view>售楼处地址</view>
+        </view>
+        <view class="right">
+          <view class="elli">漯河市人民路</view>
+        </view>
+      </view>
+  </view>
+</view>

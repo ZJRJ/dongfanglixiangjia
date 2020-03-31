@@ -1,0 +1,346 @@
+<!--pages/detail/detail.wxml-->
+
+<wxs module="filter" src="../../common/filter/filter.wxs"></wxs>
+<!-- <import src='../../wxParse/wxParse.wxml' /> -->
+
+<view class="detail">
+  <!-- 
+indicator-dots='true':是否显示面板指示点,默认为false
+indicator-color='red':指示点颜色
+indicator-active-color='yellow':当前选中的指示点颜色
+autoplay='true':是否自动切换
+ -->
+  <swiper indicator-dots='true' indicator-color='orange' indicator-active-color='yellow' autoplay='true' class="imgSwiper mb30" bindtap="navImg">
+    <swiper-item class='bra6' wx:for='{{detail.picUrlList}}' wx:key="index">
+      <image src="{{item.picUrl}}"></image>
+    </swiper-item>
+    <!-- <swiper-item class='bra6'>
+      <image src='https://img.zhichiwangluo.com/zcimgdir/thumb/t_15755960915de9b03b3f509.jpg'></image>
+    </swiper-item>
+    <swiper-item class='bra6'>
+      <image src='https://img.zhichiwangluo.com/zcimgdir/thumb/t_15743046645dd5fb98f27e3.jpg'></image>
+    </swiper-item> -->
+  </swiper>
+  <view class="content">
+    <view class="houseInfo bra6">
+      <view class="state">
+        <a href="javascript:;" class="bra6 {{index == 0?'red':''}}" wx:for='{{detail.fitmentType}}' data-index="{{index}}" wx:key="index">{{item}}</a>
+        <!-- <a href="javascript:;" class='bra6'>别墅洋房</a>
+        <a href="javascript:;" class='bra6'>海景高层</a>
+        <a href="javascript:;" class='bra6'>商业综合体</a> -->
+      </view>
+      <view class="projectName">{{detail.louPanName}}</view>
+      <view class="projectNameRemark grey">备案名：{{detail.louPanName}}</view>
+      <view class="buyPeoples">
+        <!-- <image src=""></image> -->
+        <!-- <view class="img {{index !== 0?'ml15':''}}" wx:for='{{detail.watch}}' data-index="{{index}}" wx:key="index" style="background-image:url({{item.avater}})"></view> -->
+        <!-- <view class="img ml15" style="background-image:url(http://chat.hnshengen.com/images/avatar.png)"></view>
+        <view class="img ml15" style="background-image:url(http://chat.hnshengen.com/images/tx3.png)"></view>
+        <view class="img ml15" style="background-image:url(http://chat.hnshengen.com/images/avatar.png)"></view>
+        <view class="img ml15" style="background-image:url(http://chat.hnshengen.com/images/tx3.png)"></view>
+        <view class="img ml15" style="background-image:url(http://chat.hnshengen.com/images/avatar.png)"></view>
+        <view class="img ml15" style="background-image:url(http://chat.hnshengen.com/images/tx3.png)"></view> -->
+        <view class="special">
+          <text class="pinkRed">{{detail.num}}人</text>
+          <text class="grey">想买</text>
+        </view>
+      </view>
+      <view class="price">约{{detail.price}}元/m²起</view>
+      <view class="tel">
+        <text class="grey">电话：</text>
+        <text class="tel1">{{detail.telephone}}</text>
+        <i class="iconfont icondianhua"></i>
+      </view>
+      <view class="address elli">
+        <text class="grey">地址：</text>
+        <text class="tel1">{{detail.address}}</text>
+        <i class="iconfont icondizhi"></i>
+      </view>
+      <view class="more01" bindtap="moreInfo" data-location="{{detail.address}}">
+        查看更多信息
+      </view>
+      <!-- <view class="room">
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+          <view class="left bra6" style="background-image:url(http://chat.hnshengen.com/images/1.png)"></view>
+          <view class="right">
+            <view class="top bra6" style="background-image:url(http://chat.hnshengen.com/images/2.png)"></view>
+            <view class="bottom bra6" style="background-image:url(http://chat.hnshengen.com/images/3.png)"></view>
+          </view>
+        </button>
+      </view> -->
+    </view>
+    <!-- 项目展示图片 -->
+    <view class="videoEnter bra6 mb30">
+      <image src='http://chat.hnshengen.com/images/videoEnter.png'></image>
+    </view>
+  </view>
+  <!-- 户型区域 -->
+  <view class="hx_detailBox bra6 mb30">
+    <view class="hx_box">
+      <view class="hx_title">户型推荐</view>
+      <view class="hx_more" bindtap="moreHuXing">查看更多</view>
+    </view>
+    <swiper class="imgSwiper mb30" display-mviewtiple-items='1.5' previous-margin='20rpx'>
+      <swiper-item class='swiperItem bra6' wx:for='{{detail.layoutInfo}}' data-name="{{detail.louPanName}}" data-index="{{item.layoutId}}" wx:key="index" bindtap="huxingClick">
+        <view class="pic">
+          <image src="{{item.layoutPic}}" alt="{{item.layoutName}}"></image>
+        </view>
+        <view>
+          <text class="tit">{{item.layoutStructure}}</text>
+        </view>
+        <view class="area">建面{{item.layoutArea}}㎡</view>
+        <view class="labs">
+          <!-- <text wx:for='{{item.remark}}' data-index="{{index}}" wx:for-item="item2" wx:key="index">{{item2}}</text> -->
+          <!-- <text>双卫</text>-->
+          <text  wx:for="{{item.layoutDes}}"  wx:for-item="threedata" wx:key="id">{{threedata}}</text>
+          <!-- <text>首付{{item.shoufuRatio}}</text> -->
+        </view>
+      </swiper-item>
+      <!--<swiper-item class='swiperItem bra6'>
+        <view class="pic">
+          <image src="http://chat.hnshengen.com/images/117.jpg" alt="昌建·苏荷花千树3室2厅2卫户型图"></image>
+        </view>
+        <view>
+          <text class="tit">3室2厅2卫</text>
+        </view>
+        <view class="area">建面136.9㎡</view>
+        <view class="labs">
+          <text>景观阳台</text>
+          <text>双卫</text>
+          <text>明厨明卫</text>
+        </view>
+      </swiper-item>
+     <swiper-item class='swiperItem bra6'>
+        <view class="pic">
+          <image src="http://chat.hnshengen.com/images/117.jpg" alt="昌建·苏荷花千树3室2厅2卫户型图"></image>
+        </view>
+        <view>
+          <text class="tit">3室2厅2卫</text>
+        </view>
+        <view class="area">建面136.9㎡</view>
+        <view class="labs">
+          <text>景观阳台</text>
+          <text>双卫</text>
+          <text>明厨明卫</text>
+        </view>
+      </swiper-item>
+      <swiper-item class='swiperItem bra6'>
+        <view class="pic">
+          <image src="http://chat.hnshengen.com/images/117.jpg" alt="昌建·苏荷花千树3室2厅2卫户型图"></image>
+        </view>
+        <view>
+          <text class="tit">3室2厅2卫</text>
+        </view>
+        <view class="area">建面136.9㎡</view>
+        <view class="labs">
+          <text>景观阳台</text>
+          <text>双卫</text>
+          <text>明厨明卫</text>
+        </view>
+      </swiper-item> -->
+
+    </swiper>
+
+  </view>
+  <!-- 置业顾问 -->
+  <view class="zygw bra6 mb30">
+    <view class="sf_detailBox">
+      <view class="ztt_hdDetail">置业顾问
+      </view>
+      <view class="ztt_zygwList">
+        <view style="">
+          <view class="ztt_zygwListItem" wx:for='{{zygwList}}' wx:key="index">
+            <view class="head">
+              <image src="{{item.headPort}}" alt="">
+              </image>
+            </view>
+            <view class="r">
+              <view class="inner">
+                <view class="info">
+                  <text>{{item.propName}}</text>
+                </view>
+                <view class="lab">
+                  <span>
+                    <text>{{item.phone}}</text>
+                  </span>
+                </view>
+              </view>
+            </view>
+            <view class="btns wxBtn">
+              <text class="ztt_imBtn imBtn"></text>
+            </view>
+            <view class="btns" data-phone="{{item.phone}}" bindtap="cellPhone">
+              <text class="ztt_telBtn telBtn"></text>
+            </view>
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+  </view>
+  <!-- 时间线 -->
+  <view class="timeline bra6 mb30">
+    <view class="hx_box">
+      <view class="hx_title">项目动态</view>
+      <view class="hx_more">查看更多</view>
+    </view>
+    <view>
+      <view class="timeline-item" wx:for='{{timeLine}}' data-index="{{index}}" wx:key="index">
+        <view class="timeline-item-color timeline-item-head"></view>
+        <view class="timeline-item-tail {{(index+1) == timeLine.length?'hide':''}}"></view>
+        <view class="timeline-item-content">
+          <view class="time">{{filter.formatDate(item.dynTime ,'YY-MM-DD')}} </view>
+          <view class="info bra6">
+            <view>{{filter.formatDate(item.dynTime ,'YY-MM-DD')}}</view>
+            <view>{{item.dynStateContent}}</view>
+          </view>
+
+        </view>
+      </view>
+      <!-- <view class="timeline-item">
+        <view class="timeline-item-color timeline-item-head"></view>
+        <view class="timeline-item-tail"></view>
+        <view class="timeline-item-content">
+          <view class="time">2017年04月16日 </view>
+          <view class="info bra6">
+            <view>开始动工</view>
+            <view>一期项目</view>
+          </view>
+        </view>
+      </view>
+      <view class="timeline-item">
+        <view class="timeline-item-color timeline-item-head"></view>
+        <view class="timeline-item-tail hide"></view>
+        <view class="timeline-item-content">
+          <view class="time">2016年04月16日 </view>
+          <view class="info bra6">
+            <view>取得预售证</view>
+            <view>一期项目</view>
+          </view>
+        </view>
+      </view> -->
+
+    </view>
+  </view>
+  <!-- 新闻资讯 -->
+  <view class="news bra6 mb30" wx:if='{{newsList.length>0}}'>
+    <view class="hx_box">
+      <view class="hx_title">企业新闻</view>
+      <view class="hx_more">查看更多</view>
+    </view>
+    <view>
+      <view class="li" wx:for='{{newsList}}' wx:key="index" bindtap="newsInfo" data-news="{{item.id}}">
+        <view class="pic">
+          <image src="{{item.url}}"></image>
+        </view>
+        <view class="rightContent">
+          <view class="title">{{item.title}}</view>
+            <!-- <view class="title" decode='true'>
+             <template is="wxParse" data="{{wxParseData:replayArr[index]}}"/>
+            </view> -->
+          <view class="singleInfo">{{item.updateTime}}</view>
+        </view>
+      </view>
+      <!-- <view class="li">
+        <view class="pic">
+          <image src="http://chat.hnshengen.com/images/3.jpg"></image>
+        </view>
+        <view class="rightContent">
+          <view class="title">新年返乡置业 首选双汇金尊府！</view>
+          <view class="singleInfo">2020-01-16 10:00</view>
+        </view>
+      </view> -->
+    </view>
+  </view>
+  <!-- 广告 -->
+  <view class="advertisement bra6 mb30">
+    <view class="hx_box">
+      <view class="hx_title">项目亮点</view>
+      <view class="hx_more">查看更多</view>
+    </view>
+    <view class="ad_img" style="background-image:url({{detail.lightSpotPic}})">
+    </view>
+  </view>
+  <!-- 项目位置 -->
+  <view class="projectAddress bra6 mb30">
+    <view class="hx_box">
+      <view class="hx_title">周边配套</view>
+      <view class="hx_more">查看更多</view>
+    </view>
+    <view class="ad_img bra6" style="background-image:url(http://chat.hnshengen.com/images/address.jpg)">
+      <view class="ad_address  drift" bindtap="map" data-location="{{detail.address}}">
+        <view class="name elli">{{detail.louPanName}}</view>
+        <i class="iconfont icondizhi"></i>
+      </view>
+    </view>
+    <view class="tab">
+      <view class="tabItem {{index == flag ?'active' :''}} " wx:for='{{detail.around}}' data-index="{{index}}" data-title="{{item.title}}" wx:key="index" bindtap="toggle">
+        <view class="iconF">
+          <i class="iconfont {{item.icon}}"></i>
+        </view>
+        <view class="name">{{item.title}}</view>
+      </view>
+      <!-- <view class="tabItem">
+        <view class="iconF">
+          <i class="iconfont iconxuexiao"></i>
+        </view>
+        <view class="name">学校</view>
+      </view>
+      <view class="tabItem">
+        <view class="iconF">
+          <i class="iconfont iconyiliao"></i>
+        </view>
+        <view class="name">医疗</view>
+      </view>
+      <view class="tabItem">
+        <view class="iconF">
+          <i class="iconfont icongouwu"></i>
+        </view>
+        <view class="name">购物</view>
+      </view>
+      <view class="tabItem">
+        <view class="iconF">
+          <i class="iconfont iconcanyin"></i>
+        </view>
+        <view class="name">餐饮</view>
+      </view> -->
+
+
+    </view>
+    <view class="tabContent">
+      <view class="tabContentItem" wx:for='{{aroundList}}' data-index="{{index}}" wx:key="index">
+        <view class="name elli" data-location="{{detail.address}}">{{item.title}}</view>
+        <view class='remote'>{{item._distance}}m</view>
+      </view>
+      <!-- <view class="tabContentItem">
+        <view class="name elli">源汇区疾病防治中心</view>
+        <view class='remote'>0.82km</view>
+      </view>
+      <view class="tabContentItem">
+        <view class="name elli">源汇区疾病防治中心</view>
+        <view class='remote'>0.82km</view>
+      </view> -->
+    </view>
+    <view class="around bra6" bindtap="map" data-location="{{detail.address}}">
+      查看更多周边概况
+    </view>
+    <view class="fixed">
+      <view class="flex">
+        <view class="share">
+          <view>
+            <i class="iconfont icondizhi"></i>
+          </view>
+
+          <view class="fenxiang">分享</view>
+        </view>
+        <view class="bgRed bra6">
+          洽谈室
+        </view>
+        <view class="bgRed bra6">
+          电话咨询
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,46 @@
+<!--pages/project/project.wxml-->
+<view class="project">
+
+  <!-- 房源模块 -->
+  <view class="houseInfo">
+    <view class="box bra6" wx:for="{{houseList}}" wx:key="index" bindtap="detail" data-index="{{index}}">
+      <view class="boxTop">
+        <view class="img">
+          <text class="saling bra6">{{item.status == '1'?'在售':'待售'}}</text>
+          <image class="bra6" src="{{item.picUrlList[0].picUrl}}"></image>
+        </view>
+        <view class="info">
+          <view class="louPanName ellipsis">
+            <text>{{item.louPanName}}</text>
+          </view>
+          <view class="projectPrice">
+            <text>约{{item.price}}元/m²起</text>
+          </view>
+          <view class="projectInfo">
+            <text>{{item.sum}}人想买</text>
+          </view>
+          <view class="projectLocation elli">
+            <text>{{item.projectLocation}}</text>
+          </view>
+          <view class="fitmentType">
+            <text wx:for="{{item.fitmentType}}" wx:key="itemName" wx:for-item="itemName">{{itemName}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="boxBottom bgr6">
+        <view class="left elli">
+          <text>{{item.remark}}</text>
+          <i class="iconfont iconhongbao"></i>
+        </view>
+        <view>
+          <text>我要推荐</text>
+          <i class="iconfont iconyoujiantou-tianchong"></i>
+        </view>
+      </view>
+    </view>
+    <view class="noData">
+      <text>{{tips}}</text>
+    </view>
+  </view>
+
+</view>
